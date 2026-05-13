@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "A local AI pipeline to transcribe, analyse, and summarise lecture videos"
 requires-python = ">=3.11"
 dependencies = [
+    "pydantic",
     "yt-dlp",
     "faster-whisper",
     "imagehash",
