@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vidistill"
+version = "0.1.0"
+description = "A local AI pipeline to transcribe, analyse, and summarise lecture videos"
+requires-python = ">=3.11"
+dependencies = [
+    "yt-dlp",
+    "faster-whisper",
+    "imagehash",
+    "Pillow",
+    "ollama",
+    "fastapi",
+    "uvicorn",
+    "jinja2",
+    "python-multipart",
+    "chromadb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
