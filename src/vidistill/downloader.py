@@ -44,13 +44,15 @@ def fetch_metadata(url: str) -> VideoMetadata:
 
 
 def download(
-    url: str, dest: Union[str, Path], metadata: Optional[VideoMetadata] = None
+    url: str,
+    destination_dir: Union[str, Path],
+    metadata: Optional[VideoMetadata] = None,
 ) -> tuple[Path, Path]:
     """Downloads a video and audio separately from the given URL to the specified destination directory.
 
     Args:
         url (str): The URL of the video to download.
-        dest (Union[str, Path]): The destination directory where the video should be saved.
+        destination_dir (Union[str, Path]): The destination directory where the video should be saved.
         metadata (Optional[VideoMetadata]): The metadata for the video to download.
 
     Returns:
@@ -62,7 +64,7 @@ def download(
     if metadata is None:
         metadata = fetch_metadata(url)
 
-    dest_path = Path(dest)
+    dest_path = Path(destination_dir)
     dest_path.mkdir(parents=True, exist_ok=True)
 
     output_path = dest_path / _output_template
