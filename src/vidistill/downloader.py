@@ -75,14 +75,3 @@ def download(
     audio_output = dest_path / f"{metadata.video_id}.m4a"
 
     return video_output, audio_output
-
-
-# Test
-if __name__ == "__main__":
-    from vidistill.config import DATA_DIR
-
-    url = "https://youtu.be/IXbFa2rQk3A?si=UIv7sJl9Rt_dVv3S"
-    destination = DATA_DIR / "test_download"
-    video_path, audio_path = download(url, destination, None)
-    print(f"Video downloaded to: {video_path}")
-    print(f"Audio downloaded to: {audio_path}")
