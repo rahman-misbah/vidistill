@@ -48,8 +48,11 @@ logs/
 # ChromaDB local storage
 chroma_db/
 
-# Runtime files
+# Runtime files (auto created by the application, should not be committed)
 queue.txt
+
+# Scratch pad
+sandbox.py
 
 # Example files
 !.env.example
